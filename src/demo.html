@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css"
+        integrity="sha384-jzngWsPS6op3fgRCDTESqrEJwRKck+CILhJVO5VvaAZCq8JYf8HsR/HPpBOOPZfR" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+        crossorigin="anonymous"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div className={id==='' ? 'panel panel-primary' : 'panel panel-warning' }>
+        <div className="panel-heading">
+            <h3 className="panel-title">
+                {id === '' ? 'Add new task' : 'Edit task'}
+                <span className="fa fa-times-circle text-right" onClick={this.closeForm}></span>
+            </h3>
+        </div>
+        <div className="panel-body">
+            <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                    <label>Task-name :</label>
+                    <input type="text" className="form-control" name="newTaskName" value={this.state.newTaskName}
+                        onChange={this.handleChange} />
+                </div>
+                <label>Status :</label>
+                <select className="form-control" name="status" value={status} onChange={this.handleChange}>
+                    <option value={true}>To Do</option>
+                    <option value={false}>Completed</option>
+                </select><br />
+                <div className="text-center">
+                    <button type="submit" className="btn btn-warning">
+                        <span className="fa fa-plus mr-5"></span>
+                        {id === '' ? 'Add' : 'Save'}
+                    </button>&nbsp;
+                    <button type="button" className="btn btn-danger" onClick={this.onClear}>
+                        <span className="fa fa-close mr-5"></span>Clear
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
